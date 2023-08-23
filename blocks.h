@@ -4,6 +4,7 @@ static const Block blocks[] = {
     {"🕒 ", "uptime | cut -d' ' -f 4,5 | tr -d ','", 30, 0},
     {"📜 ", "ls ~/.scripts | wc -l",   60, 0},
 	{"🖥️","free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
+	{"/ ","df -hP | awk 'NR==2 {print $5}'",	30,		0},
     {"🔋 ", "acpi | awk '{print $4}' | sed 's/,//g'", 5, 0},
 	{"📆 ", "date '+%b %d (%a) %I:%M%p'",					5,		0},
     {"🔈 ", "pactl get-sink-volume 0 | cut -d' ' -f 6 | head -1q",    5,		0},
